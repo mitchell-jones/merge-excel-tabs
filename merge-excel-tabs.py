@@ -3,10 +3,9 @@ import sys
 import xlrd
 
 xls = pd.ExcelFile(str(sys.argv[1]))
-cols = ['COUNTY', 'REP', 'Prefix', 'GPS Sales']
 
 def load_df(name):
-    df2 = pd.read_excel(xls, name, usecols=cols)
+    df2 = pd.read_excel(xls, name)
     df2['SheetName'] = name
     return df2
 
